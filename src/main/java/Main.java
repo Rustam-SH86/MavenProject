@@ -51,7 +51,7 @@ public class Main {
 
         driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[3]/form/div[2]/div[2]/div/div/ul/li[2]/a")).click();
 
-        driver.quit(); //не закрывает драйвер
+        driver.quit(); //не закрывает драйвер/
 
 
 
