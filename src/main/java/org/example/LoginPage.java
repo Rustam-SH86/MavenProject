@@ -1,35 +1,49 @@
 package org.example;
 
+import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginPage {
-    WebDriver driver = new ChromeDriver();
+
+    private WebDriver driver;
+    private WebElement loginInput;
+    private WebElement passwordInput;
+    private WebElement enter;
+    private WebElement search;
+
+
+    public LoginPage(WebDriver driver){
+        this.driver = driver;
+        loginInput = driver.findElement(By.xpath("//input[@type='email']"));
+        passwordInput = driver.findElement(By.xpath("//input[@type='password']"));
+        enter = driver.findElement(By.xpath("//div//button[@class='button button--full-width']"));
 
 
 
-    WebElement yourAccount =driver.findElement(By.xpath("//span[text()='Sign in']"));
-    WebElement userName = driver.findElement(By.xpath("//input[@id='user-identifier-input']"));
-    WebElement passWord = driver.findElement(By.xpath("//input[@id='password-input']"));
-    WebElement enter =driver.findElement(By.xpath("//div//button[@id='submit-button']"));
+    }
+    /*public LoginPage(WebDriver driver, WebElement loginInput, WebElement passwordInput, WebElement enter){
+        this.driver = driver;
+        this.loginInput = loginInput;
+        this.passwordInput = passwordInput;
+        this.enter = enter;
+
+    }*/
 
 
-
-
-
-    public void Login(String login, String pass){
-        yourAccount.click();
-        userName.sendKeys(login);
-        passWord.sendKeys(pass);
-        enter.click();
-
-
-
+    public void LoginIn (String login, String password){
+        this.loginInput.click();
+        this.loginInput.sendKeys("rust-shafik@yandex.ru");
+        this.passwordInput.click();
+        this.passwordInput.sendKeys("rustam2204");
+        this.enter.click();
 
 
     }
 
 
-}
+    }
+
