@@ -15,20 +15,31 @@ public class NavigateBar extends AbstractPage{
 
     @FindBy(xpath = "(//div//a[@href='/job'])[1]")
     WebElement vacancies;
-    @FindBy(xpath = "//div//p[text()='Мероприятия']")
+    @FindBy(xpath = "//div//a[@href='/events']")
     WebElement events;
 
     public NavigateBar(WebDriver driver){
         super(driver);
 
     }
-    void clickNavigateBar(){
-        Actions clickNavigateBar = new Actions(getDriver());
-        clickNavigateBar.click(popular).click(newest).click(company).click(vacancies).click(events);
-
-
+    void clickPopular(){
+        popular.click();
 
     }
+    void clickNewest(){
+        newest.click();
+    }
+    void clickCompany(){
+        company.click();
+
+    }
+    void clickVacancies(){
+        vacancies.click();
+    }
+    void clickEvents(){
+        events.click();
+    }
+
 
 
 

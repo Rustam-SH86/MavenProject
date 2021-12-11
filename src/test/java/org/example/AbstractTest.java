@@ -13,10 +13,11 @@ public class AbstractTest {
     @BeforeAll
     static  void setDriver(){
         WebDriverManager.chromedriver().setup();
-        driver= new ChromeDriver();
         ChromeOptions options= new ChromeOptions();
         options.addArguments("--incognito");
-        options.setHeadless(true);
+        options.addArguments("start-maximized");
+        //options.setHeadless(true);
+        driver= new ChromeDriver(options);
         options.setPageLoadTimeout(Duration.ofSeconds(10));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
