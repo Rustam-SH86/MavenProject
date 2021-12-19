@@ -1,7 +1,9 @@
 package org.example;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,7 +24,8 @@ public class AbstractTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
     }
-    @AfterAll
+
+   @AfterAll
     public static void stopAndExit(){
         if(driver != null)
             driver.quit();

@@ -2,7 +2,7 @@ package org.example;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+
 import org.openqa.selenium.support.FindBy;
 
 public class NavigateBar extends AbstractPage{
@@ -27,16 +27,19 @@ public class NavigateBar extends AbstractPage{
 
     }
     void clickNewest(){
+
         newest.click();
     }
     void clickCompany(){
-        company.click();
 
+        company.click();
     }
     void clickVacancies(){
+
         vacancies.click();
     }
     void clickEvents(){
+
         events.click();
     }
 
